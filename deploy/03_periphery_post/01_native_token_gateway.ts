@@ -9,6 +9,7 @@ import { WRAPPED_NATIVE_TOKEN_PER_NETWORK } from "../../helpers/constants";
 import { eNetwork } from "../../helpers/types";
 import { POOL_PROXY_ID, TESTNET_TOKEN_PREFIX } from "../../helpers";
 import { MARKET_NAME } from "../../helpers/env";
+import { eMetisNetwork } from "../../helpers/types";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -20,11 +21,19 @@ const func: DeployFunction = async function ({
   const network = (
     process.env.FORK ? process.env.FORK : hre.network.name
   ) as eNetwork;
-  const poolConfig = loadPoolConfig(MARKET_NAME as ConfigNames);
 
+  if (network == eMetisNetwork.main || network == eMetisNetwork.testnet) {
+    console.log(
+      "[NOTICE] Skipping deployment of WrappedTokenGateway for Metis as the native token is ERC-20"
+    );
+    return;
+  }
+
+  const poolConfig = loadPoolConfig(MARKET_NAME as ConfigNames);
   let wrappedNativeTokenAddress;
 
-  // Local networks that are not live or testnet, like hardhat network, will deploy a WETH9 contract as mockup for testing deployments
+  // Local networks that are not live or testnet,
+  // like hardhat network, will deploy a WETH9 contract as mockup for testing deployments
   if (isTestnetMarket(poolConfig)) {
     wrappedNativeTokenAddress = (
       await deployments.get(

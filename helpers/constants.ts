@@ -6,6 +6,7 @@ import {
   eFantomNetwork,
   eHarmonyNetwork,
   eOptimismNetwork,
+  eMetisNetwork,
   ePolygonNetwork,
 } from "./types";
 
@@ -98,6 +99,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
+  metis: "0xd4a5bb03b5d66d9bf81507379302ac2c2dfdfa6d",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -121,6 +123,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
+  metis: "0x3bbe70e2f96c87aece7f67a2b0178052f62e37fe",
 };
 
 export const ETHEREUM_SHORT_EXECUTOR =
@@ -135,6 +138,7 @@ export const POOL_ADMIN: Record<string, string> = {
   [eFantomNetwork.main]: "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
+  [eMetisNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c", // TODO:
   [ePolygonNetwork.polygon]: "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
 };
@@ -145,6 +149,7 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [eFantomNetwork.main]: "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
+  [eMetisNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c", // TODO:
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
 };
@@ -181,6 +186,7 @@ export const DEFAULT_NAMED_ACCOUNTS = {
 
 export const GOVERNANCE_BRIDGE_EXECUTOR: { [key: string]: string } = {
   [ePolygonNetwork.polygon]: "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
+  [eMetisNetwork.main]: "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772", // TODO: fix after creation
 };
 
 export const MULTISIG_ADDRESS: { [key: string]: string } = {
@@ -189,6 +195,7 @@ export const MULTISIG_ADDRESS: { [key: string]: string } = {
   [eFantomNetwork.main]: "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
+  [eMetisNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c", // TODO: fix after creation
   // Polygon Multisig
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
 };

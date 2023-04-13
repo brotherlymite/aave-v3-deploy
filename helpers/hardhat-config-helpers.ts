@@ -11,6 +11,7 @@ import {
   eAvalancheNetwork,
   eFantomNetwork,
   eOptimismNetwork,
+  eMetisNetwork,
 } from "./types";
 
 require("dotenv").config();
@@ -91,6 +92,8 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
     eEthereumNetwork.sepolia
   )}`,
   [eArbitrumNetwork.goerliNitro]: `https://goerli-rollup.arbitrum.io/rpc`,
+  [eMetisNetwork.testnet]: `https://goerli.gateway.metisdevops.link`,
+  [eMetisNetwork.main]: `https://andromeda.metis.io/?owner=1088`,
 };
 
 export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
@@ -101,6 +104,7 @@ export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
   [eAvalancheNetwork.avalanche]: true,
   [eFantomNetwork.main]: true,
   [eOptimismNetwork.main]: true,
+  [eMetisNetwork.main]: true,
 };
 
 const GAS_PRICE_PER_NET: iParamsPerNetwork<string | number> = {

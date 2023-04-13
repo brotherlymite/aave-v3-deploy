@@ -21,6 +21,7 @@ import FantomMarket from "../markets/fantom";
 import PolygonMarket from "../markets/polygon";
 import OptimisticConfig from "../markets/optimistic";
 import ArbitrumConfig from "../markets/arbitrum";
+import MetisConfig from "../markets/metis";
 import { isValidAddress } from "./utilities/utils";
 import { AaveProtocolDataProvider } from "../typechain";
 import {
@@ -49,6 +50,7 @@ export enum ConfigNames {
   Optimistic = "Optimistic",
   Arbitrum = "Arbitrum",
   Ethereum = "Ethereum",
+  Metis = "Metis",
 }
 
 export const getParamPerNetwork = <T>(
@@ -114,6 +116,8 @@ export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
       return ArbitrumConfig;
     case ConfigNames.Ethereum:
       return EthereumV3Config;
+    case ConfigNames.Metis:
+      return MetisConfig;
     default:
       throw new Error(
         `Unsupported pool configuration: ${configName} is not one of the supported configs ${Object.values(

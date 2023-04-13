@@ -13,6 +13,7 @@ import {
   eFantomNetwork,
   eHarmonyNetwork,
   eOptimismNetwork,
+  eMetisNetwork,
   ePolygonNetwork,
   eTenderly,
 } from "./helpers/types";
@@ -113,6 +114,8 @@ export default {
       eEthereumNetwork.goerli,
       5
     ),
+    [eMetisNetwork.testnet]: getCommonNetworkConfig(eMetisNetwork.testnet, 599),
+    [eMetisNetwork.main]: getCommonNetworkConfig(eMetisNetwork.main, 1088),
     [eEthereumNetwork.sepolia]: getCommonNetworkConfig(
       eEthereumNetwork.sepolia,
       11155111
@@ -155,6 +158,7 @@ export default {
       "@aave/core-v3/contracts/deployments/ReservesSetupHelper.sol",
       "@aave/core-v3/contracts/misc/AaveProtocolDataProvider.sol",
       "@aave/core-v3/contracts/misc/L2Encoder.sol",
+      "@aave/core-v3/contracts/misc/ZeroReserveInterestRateStrategy.sol",
       "@aave/core-v3/contracts/protocol/configuration/ACLManager.sol",
       "@aave/core-v3/contracts/dependencies/weth/WETH9.sol",
       "@aave/core-v3/contracts/mocks/helpers/MockIncentivesController.sol",

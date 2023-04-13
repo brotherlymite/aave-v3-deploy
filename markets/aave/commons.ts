@@ -4,6 +4,7 @@ import {
   eFantomNetwork,
   eHarmonyNetwork,
   eOptimismNetwork,
+  eMetisNetwork,
   ePolygonNetwork,
   TransferStrategy,
 } from "./../../helpers/types";
@@ -158,6 +159,8 @@ export const CommonsConfig: ICommonConfiguration = {
     [eArbitrumNetwork.arbitrumTestnet]: true,
     [eOptimismNetwork.main]: true,
     [eOptimismNetwork.testnet]: true,
+    [eMetisNetwork.main]: true,
+    [eMetisNetwork.testnet]: true,
   },
   ParaswapRegistry: {
     [eEthereumNetwork.main]: "0xa68bEA62Dc4034A689AA0F58A76681433caCa663",
