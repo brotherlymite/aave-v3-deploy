@@ -70,6 +70,15 @@ const func: DeployFunction = async function ({
     });
   }
 
+  // Deploy Zero Rate Strategy
+  const args = [addressProviderArtifact.address];
+  await deployments.deploy(`ZeroReserveInterestRateStrategy`, {
+    from: deployer,
+    args: args,
+    contract: "ZeroReserveInterestRateStrategy",
+    log: true,
+  });
+
   // Deploy Reserves ATokens
 
   const treasuryAddress = await getTreasuryAddress(poolConfig, network);
