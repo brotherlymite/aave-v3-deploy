@@ -204,6 +204,27 @@ export default {
     ? DETERMINISTIC_FACTORIES
     : undefined,
   etherscan: {
-    apiKey: ETHERSCAN_KEY,
+    apiKey: {
+      metis: "non-empty string to use as api-key",
+      "metis-testnet": "non-empty string to use as api-key",
+    },
+    customChains: [
+      {
+        network: "metis",
+        chainId: 1088,
+        urls: {
+          apiURL: "https://andromeda-explorer.metis.io/api",
+          browserURL: "https://andromeda-explorer.metis.io",
+        },
+      },
+      {
+        network: "metis-testnet",
+        chainId: 599,
+        urls: {
+          apiURL: "https://goerli.explorer.metisdevops.link/api",
+          browserURL: "https://goerli.explorer.metisdevops.link",
+        },
+      },
+    ],
   },
 };
